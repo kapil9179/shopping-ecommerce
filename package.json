@@ -10,6 +10,9 @@
     "client-build": "npm run build --prefix ./front-end",
     "postinstall": "npm run client-install && npm run client-build"
   },
+ "engines": {
+    "node": "20.8.0"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
