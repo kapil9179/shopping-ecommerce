@@ -1,9 +1,8 @@
 import axios from "axios";
-const serverURL = process.env.NODE_ENV === "production" ? process.env.REACT_APP_SERVER_URL:'http://localhost:8100'
-console.log(serverURL);
+
 export const fetchData = async () => {
   try {
-    const response = await axios.get(`${serverURL}/api/products`);
+    const response = await axios.get(`${process.env.REACT_APP_URL}/api/products`);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -13,7 +12,7 @@ export const fetchData = async () => {
 export const registerData = async (userData) => {
   try {
     const response = await axios.post(
-      `${serverURL}/api/products/register`,
+      `${process.env.REACT_APP_URL}/api/products/register`,
       userData,
       {
         withCredentials: true,
@@ -33,7 +32,7 @@ export const registerData = async (userData) => {
 export const loginData = async (userData) => {
   try {
     const response = await axios.post(
-      `${serverURL}/api/products/login`,
+      `${process.env.REACT_APP_URL}/api/products/login`,
       userData,
       {
         withCredentials: true,
@@ -55,7 +54,7 @@ export const updatePassword = async (userData) => {
   try {
     const token = localStorage.getItem("token");
     const response = await axios.post(
-      `${serverURL}/api/products/changepassword`,
+      `${process.env.REACT_APP_URL}/api/products/changepassword`,
       userData,
       {
         headers: { authoraization: token },

@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 
 const Dashboard = ({ handelDashboard }) => {
-  const serverURL = process.env.NODE_ENV === "production" ? process.env.REACT_APP_SERVER_URL:'http://localhost:8100'
+  
   
   const [userdata, setuserdata] = useState({});
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Dashboard = ({ handelDashboard }) => {
       const token = localStorage.getItem("token");
       try {
         const res = await axios.post(
-          `${serverURL}/api/products/dashboard`,
+          `${process.env.REACT_APP_URL}/api/products/dashboard`,
           null,
           {
             headers: { authoraization: token },

@@ -2,14 +2,14 @@ import axios from "axios";
 import React, { useState } from "react";
 
 const Search = () => {
-  const serverURL = process.env.NODE_ENV === "production" ? process.env.REACT_APP_SERVER_URL:'http://localhost:8100'
+  
   const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = async () => {
     try {
       const response = await axios.post(
-        `${baseURL}/api/products/search?query=${query}`
+        `${process.env.REACT_APP_URL}/api/products/search?query=${query}`
       );
       setSearchResults(response.data);
     } catch (err) {
