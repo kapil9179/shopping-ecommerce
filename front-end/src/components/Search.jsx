@@ -9,7 +9,7 @@ const Search = () => {
   const handleSearch = async () => {
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_URL}/api/products/search?query=${query}`
+        `${process.env.REACT_APP_SERVER_URL}/api/products/search?query=${query}`
       );
       setSearchResults(response.data);
     } catch (err) {

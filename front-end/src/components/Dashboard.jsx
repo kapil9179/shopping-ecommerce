@@ -22,7 +22,7 @@ const Dashboard = ({ handelDashboard }) => {
       const token = localStorage.getItem("token");
       try {
         const res = await axios.post(
-          `${process.env.REACT_APP_URL}/api/products/dashboard`,
+          `${process.env.REACT_APP_SERVER_URL}/api/products/dashboard`,
           null,
           {
             headers: { authoraization: token },
