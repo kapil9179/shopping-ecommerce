@@ -1,6 +1,6 @@
 import axios from "axios";
 const serverURL = process.env.NODE_ENV === "production" ? process.env.REACT_APP_SERVER_URL:'http://localhost:8100'
-
+console.log(serverURL);
 export const fetchData = async () => {
   try {
     const response = await axios.get(`${serverURL}/api/products`);
