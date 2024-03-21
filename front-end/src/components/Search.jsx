@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 
 const Search = () => {
-  const serverURL = process.env.NODE_ENV = "production" ? process.env.REACT_APP_SERVER_URL:'http://localhost:8100'
+  const serverURL = process.env.NODE_ENV === "production" ? process.env.REACT_APP_SERVER_URL:'http://localhost:8100'
   const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
