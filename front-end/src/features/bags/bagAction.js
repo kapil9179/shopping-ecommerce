@@ -10,6 +10,7 @@ export const fetchData = async () => {
 };
 // registration
 export const registerData = async (userData) => {
+  
   try {
     const response = await axios.post(
       `https://shopping-ecommerce.onrender.com/api/products/register`,
@@ -32,7 +33,7 @@ export const registerData = async (userData) => {
 export const loginData = async (userData) => {
   try {
     const response = await axios.post(
-      `$https://shopping-ecommerce.onrender.com/api/products/login`,
+      `https://shopping-ecommerce.onrender.com/api/products/login`,
       userData,
       {
         withCredentials: true,
